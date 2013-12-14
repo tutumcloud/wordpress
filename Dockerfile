@@ -11,5 +11,5 @@ RUN git clone https://github.com/WordPress/WordPress.git /app
 # Configure Wordpress to connect to local DB
 ADD ./wp-config.php /app/wp-config.php
 
-EXPOSE 80
+EXPOSE 80 3306
 CMD ["/run.sh"]
