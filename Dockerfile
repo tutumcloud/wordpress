@@ -2,7 +2,7 @@ FROM tutum/lamp:latest
 MAINTAINER Fernando Mayo <fernando@tutum.co>
 
 # Set up local database
-RUN mysql -uroot -e "CREATE DATABASE wordpress"
+RUN /create_db.sh wordpress
 
 # Download latest version of Wordpress into /app
 RUN rm -fr /app
