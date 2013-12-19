@@ -9,7 +9,7 @@ RUN rm -fr /app
 RUN git clone https://github.com/WordPress/WordPress.git /app
 
 # Configure Wordpress to connect to local DB
-ADD ./wp-config.php /app/wp-config.php
+ADD https://raw.github.com/tutumcloud/tutum-docker-wordpress/master/wp-config.php /app/wp-config.php
 
 EXPOSE 80 3306
 CMD ["/run.sh"]
