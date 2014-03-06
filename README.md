@@ -13,7 +13,7 @@ To create the image `tutum/wordpress`, execute the following command on the tutu
 
 You can now push your new image to the registry:
 
-	sudo docker push tutum/wordpress
+	docker push tutum/wordpress
 
 
 Running your Wordpress docker image
@@ -21,14 +21,17 @@ Running your Wordpress docker image
 
 Start your image:
 
-	sudo docker run -d tutum/wordpress
+	docker run -d -p 80:80 tutum/wordpress
 
-It will print the new container ID (like `d35bf1374e88`). Get the allocated external port:
+Test your deployment:
 
-	sudo docker port d35bf1374e88 80
-
-It will print the allocated port (like 4751). Test your deployment:
-
-	curl http://localhost:4751/
+	curl http://localhost/
 
 You can now start configuring your Wordpress container!
+
+
+More information
+----------------
+
+For details on how to access the bundled MySQL Server or setting specific passwords, 
+please visit the [tutum/lamp repository on github](https://github.com/tutumcloud/tutum-docker-lamp)
