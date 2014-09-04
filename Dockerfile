@@ -12,7 +12,8 @@ RUN chmod -R 777 /app/wp-content
 
 # Add database setup script
 ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
-RUN chmod 755 /*.sh
+ADD create_db.sh /create_db.sh
+RUN chmod +x /*.sh
 
 
 EXPOSE 80 3306
