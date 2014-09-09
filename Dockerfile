@@ -8,7 +8,7 @@ RUN rm -fr /app && git clone --depth=1 https://github.com/WordPress/WordPress.gi
 ADD wp-config.php /app/wp-config.php
 
 # Modify permissions to allow plugin upload
-RUN chmod -R 777 /app/wp-content
+RUN chown -R www-data:www-data /app/wp-content /var/www/html
 
 # Add database setup script
 ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
