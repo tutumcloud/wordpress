@@ -10,9 +10,6 @@ while [[ RET -ne 0 ]]; do
     RET=$?
 done
 
-echo "=> Creating database wordpress in MySQL"
-/create_db.sh wordpress
-
 
 PASS=${MYSQL_PASS:-$(pwgen -s 12 1)}
 _word=$( [ ${MYSQL_PASS} ] && echo "preset" || echo "random" )
@@ -34,3 +31,6 @@ echo "MySQL user 'root' has no password but only allows local connections"
 echo "========================================================================"
 
 mysqladmin -uroot shutdown
+
+echo "=> Creating database wordpress in MySQL"
+/create_db.sh wordpress
