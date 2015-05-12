@@ -1,6 +1,8 @@
 tutum-docker-wordpress
 ======================
 
+[![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/)
+
 Out-of-the-box Wordpress docker image
 
 
