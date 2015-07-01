@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "=> Creating database wordpress in MySQL"
+/create_db.sh wordpress
+
 /usr/bin/mysqld_safe > /dev/null 2>&1 &
 
 RET=1
@@ -9,10 +12,6 @@ while [[ RET -ne 0 ]]; do
     mysql -uroot -e "status" > /dev/null 2>&1
     RET=$?
 done
-
-echo "=> Creating database wordpress in MySQL"
-/create_db.sh wordpress
-
 
 PASS=${MYSQL_PASS:-$(pwgen -s 12 1)}
 _word=$( [ ${MYSQL_PASS} ] && echo "preset" || echo "random" )
